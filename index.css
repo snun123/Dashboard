@@ -1,0 +1,175 @@
+html, body
+{
+	width: 99vw;
+	height: 99vh;
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: sans-serif;
+}
+
+.container
+{
+	width: 100%;
+	height: 100%;
+}
+
+.head
+{
+	height: 5vw;
+	background-color: #e8f9fb;
+	width: 100%;
+	
+}
+
+.logo
+{
+	margin-top: 0.35%;
+	margin-bottom: 0.35%;
+	margin-left: 1%;
+	float: left;
+	width: 15%;
+	height: 85%;
+	text-align: left;
+}
+
+.title
+{
+	margin-top: 0.35%;
+	margin-bottom: 0.35%;
+	margin-left: -3%;
+	text-align: left;
+	float: left;
+	width: 50%;
+	height: 85%;
+	font-size: 2.5vw;
+	line-height: 225%;
+}
+
+
+.alpeinlogo
+{
+	width: 60%;
+	height: 100%;
+	max-height: 5vw;
+}
+
+.sidenav
+{
+	background-color:  #e8f9fb;
+	height: 95vh;
+	float: left;
+	width: 15%;
+}
+
+.dashboard
+{	
+	height: 95vh;
+	float: right;
+	width: 85%;
+	overflow-y: scroll;
+
+}
+
+.navlink:link
+{
+ color: white;
+ margin: auto;
+ font-size: 1.8vw;
+ text-align: left;
+ text-decoration: none;
+ position: absolute;
+}
+
+.navlink:hover
+{
+ margin: auto;
+ font-size: 2vw;
+ text-align: left;
+ text-decoration: none;
+}
+
+.navlink:visited
+{
+ color: white;
+ margin: auto;
+ font-size: 1.8vw;
+ text-align: left;
+ text-decoration: none;
+}
+
+.navlinkwrap
+{
+	background-color: lightblue;
+	margin-right: auto;
+	height: 2.5vw;
+	margin-top: 2.5%;
+}
+
+.row
+{
+	height: 10vw;
+}
+
+.tool
+{
+	float: left;
+	width: 25%;
+	height: 100%;
+	text-align: center;
+}
+
+.name
+{
+	position: unset;
+	text-align: center;
+	height: 30%;
+	font-size: 1.8vw;
+	inline-size: 95%;
+	margin: auto;
+	overflow-x: hidden;
+	background-image: url("assets/back.jpg");
+	background-size: 200%;
+	background-overflow: visible;	
+	background-repeat: no-repeat;
+	     padding-left: 10px;
+     margin-left: -10px;
+}
+
+.name:hover
+{
+
+	overflow-x: visible;
+}
+
+.pictures
+{
+	text-align: center;
+	height: 50%;
+}
+
+.buttons
+{
+	height: 20%;
+	text-align: center;
+}
+
+.blink
+{
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+
+.imglink
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+.img
+{
+	max-width: 100%;
+	max-height: 100%;
+}

@@ -1,0 +1,133 @@
+html, body
+{
+	width: 99vw;
+	height: 99vh;
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: sans-serif;
+}
+
+.head
+{
+	height: 5vw;
+	background-color: #e8f9fb;
+	width: 100%;
+	
+}
+
+.logo
+{
+	margin-top: 0.35%;
+	margin-bottom: 0.35%;
+	margin-left: 1%;
+	float: left;
+	width: 15%;
+	height: 85%;
+	text-align: left;
+}
+
+.title
+{
+	margin-top: 0.35%;
+	margin-bottom: 0.35%;
+	margin-left: -3%;
+	text-align: left;
+	float: left;
+	width: 50%;
+	height: 85%;
+	font-size: 2.5vw;
+	line-height: 225%;
+}
+
+
+.alpeinlogo
+{
+	width: 60%;
+	height: 100%;
+	max-height: 5vw;
+}
+
+.loginwindow
+{
+	height: 95vw;
+}
+
+.fwrap
+{
+	text-align: center;
+	margin-top: 12%;
+	height: 10%;
+}
+
+.elabel
+{
+	font-size: 1.5vw;
+	text-align: center;
+	width: 100%;
+}
+
+.email
+{
+	width: 20vw;
+	height: 1vw;
+	margin-top: 0.1%;
+	margin-bottom: 0.5%;
+	text-align: left;
+}
+
+.pwlabel
+{
+	font-size: 1.5vw;
+	text-align: center;
+	width: 100%;
+}
+
+.pw
+{
+	width: 20vw;
+	height: 1vw;
+	margin-top: 0.1%;
+	margin-bottom: 0.5%;
+	text-align: left;
+}
+
+.senden
+{
+	font-size: 60%;
+	width: 45%;
+	height: 10%;
+	margin-top: 3%;
+	background-color: #e8f9fb;
+	border-radius: 5%;
+	text-align: center;
+	border-style: none;
+	border: 0.5px solid black;
+}
+
+.senden:hover
+{
+	font-size: 60%;
+	width: 50%;
+	height: 10%;
+	background-color: #ffffd1;
+	text-align: center;
+}
+
+.f
+{
+	width: 25%;
+	margin: auto;
+}
+
+.error
+{
+	background-color: #faa0a0;
+	border-top: 2px solid red;
+	color: white;
+	font-weight: bold;
+	width: 20%;
+	margin: auto;
+	margin-top: 2%;
+	padding: 1.5%;
+}
