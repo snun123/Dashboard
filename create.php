@@ -52,7 +52,7 @@ elseif ($_SESSION['authentication'] !== "true")
 					<br>
 					<input type="submit" name="senden" class="senden" value="senden">
 					<br>
-					<input type="submit" name="abbrechen" class="senden" value="Abbrechen">
+					<a class="ab" href="index.php">Abbrechen</a>
 				</form>
 
 				<?php
@@ -85,9 +85,9 @@ elseif ($_SESSION['authentication'] !== "true")
 
 					if($_FILES['fileToUpload']['size'] > 0) {
 
-											$result = $mysqli -> query("SELECT * FROM tools ORDER BY tid DESC LIMIT 1;");
-            $row = $result->fetch_assoc();
-					$rn=$row['tid'];
+						$result = $mysqli -> query("SELECT * FROM tools ORDER BY tid DESC LIMIT 1;");
+						$row = $result->fetch_assoc();
+						$rn=$row['tid'];
 						
 						$target_dir = "assets/";
 						$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -110,28 +110,30 @@ elseif ($_SESSION['authentication'] !== "true")
 								header("location: index.php");
 
 							} else {
-									
-							echo"<div class='error'>
 
-							Ein error ist aufgetreten
-							</div>";
+								echo"<div class='error'>
 
-									}
+								Ein error ist aufgetreten
+								</div>";
+
+							}
 
 						}					
+						$result = $mysqli -> query("SELECT * FROM tools ORDER BY tid DESC LIMIT 1;");
+						$row = $result->fetch_assoc();
+						$mysqli -> query("INSERT INTO `history`(`uid`, `element`, `changetime`, `changed`) VALUES ('".$_SESSION['uid']."','".$row['tid']."','".$time."','".$row['name']." tool estellt')");
+							header("location: index.php");
+						}
 
-						header("location: index.php");
-					}
 
 
+						?>
 
-					?>
 
+					</div>
 
 				</div>
 
 			</div>
-
-		</div>
-	</body>
-	</html>
+		</body>
+		</html>
