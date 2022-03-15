@@ -10,9 +10,7 @@
 </head>
 
 		<?php
-include "config.php";
 
-	    $mysqli = new mysqli($host, $user, $dbpw, $db);
 
 	    session_start();
 
@@ -107,8 +105,11 @@ if (!isset($_SESSION['uid'])) {
 if (isset($_POST['ja'])) {
 
 
+include "config.php";
 
-	$result = $mysqli -> query("DELETE FROM `tools` WHERE tid='".$id."'");
+	    $mysqli = new mysqli($host, $user, $dbpw, $db);
+
+	$mysqli -> query("DELETE FROM `tools` WHERE tid='".$id."'");
 
 
 

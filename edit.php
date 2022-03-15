@@ -130,7 +130,7 @@ if (!isset($_SESSION['uid'])) {
 
 if($_FILES['fileToUpload']['size'] > 0) {
 
-						$result = $mysqli -> query("SELECT * FROM tools ORDER BY tid DESC LIMIT 1;");
+						$result = $mysqli -> query("SELECT * FROM tools ORDER BY changetime DESC LIMIT 1;");
 						$row = $result->fetch_assoc();
 						$rn=$row['tid'];
 						
@@ -165,7 +165,7 @@ if($_FILES['fileToUpload']['size'] > 0) {
 
 
 	}
-								$result = $mysqli -> query("SELECT * FROM tools ORDER BY tid DESC LIMIT 1;");
+								$result = $mysqli -> query("SELECT * FROM tools ORDER BY changetime DESC LIMIT 1;");
 						$row = $result->fetch_assoc();
 						$mysqli -> query("INSERT INTO `history`(`uid`, `element`, `changetime`, `changed`) VALUES ('".$_SESSION['uid']."','".$row['tid']."','".$time."','".$row['name']." tool bearbeitet')");
 	header("location: index.php"); 
@@ -176,7 +176,7 @@ if($_FILES['fileToUpload']['size'] > 0) {
 
 if($_FILES['fileToUpload']['size'] > 0) {
 
-						$result = $mysqli -> query("SELECT * FROM tools ORDER BY tid DESC LIMIT 1;");
+						$result = $mysqli -> query("SELECT * FROM tools ORDER BY changetime DESC LIMIT 1;");
 						$row = $result->fetch_assoc();
 						$rn=$row['tid'];
 						
