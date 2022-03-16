@@ -179,12 +179,35 @@ html, body
 
 .element
 {
+
 	font-size: 1vw;
-	width: 32%;
+	width: 69%;
+	float: left;
+	padding: auto;
+	border: 1px solid black;
+	overflow-x: hidden;
+
+}
+
+.number
+{
+	font-size: 1vw;
+	width: 15%;
 	float: left;
 	padding: auto;
 	border: 1px solid black;
 }
+
+.date
+{
+	font-size: 1vw;
+	width: 15%;
+	float: left;
+	padding: auto;
+	border: 1px solid black;
+
+}
+
 
 
 

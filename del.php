@@ -11,18 +11,22 @@
 
 		<?php
 
+// give history access to the sql config file
+include "config.php";
 
-	    session_start();
+// create new mysqli object
+$mysqli = new mysqli($host, $user, $dbpw, $db);
 
+// start the browser sesson
+session_start();
 
-
-
+// check if user is logged in
 if (!isset($_SESSION['authentication'])) {
 
-	header("location: login.php");
+	header("location: index.php");
 
 }
-
+// cheock if authentication is valid
 elseif ($_SESSION['authentication'] !== "true") 
 
 {
@@ -32,24 +36,15 @@ elseif ($_SESSION['authentication'] !== "true")
 }
 
 
-
+// doulbe ckeck that a user is loged in correctly
 if (!isset($_SESSION['uid'])) {
 
 	header("location: login.php");
 
 }
 		
-
-
-
-
-
-		$id = $_GET['pass'];
-
-		$name = $_GET['name'];
-
-		$link = $_GET['link'];
-
+// get current time
+$time = date("y.m.d H.i.s");
 
 
 	?>
@@ -68,7 +63,7 @@ if (!isset($_SESSION['uid'])) {
 
 			<div class="title">
 			<?php
-			echo "$name löschen"; 
+			echo "".$_GET['name']." löschen"; 
 			?>
 			</div>
 
@@ -98,38 +93,31 @@ if (!isset($_SESSION['uid'])) {
 
 
 
-            $time = date("y.m.d H.i.s");
 
 
 
+// if the user presses ja
 if (isset($_POST['ja'])) {
 
-
-include "config.php";
-
-	    $mysqli = new mysqli($host, $user, $dbpw, $db);
-
-	$mysqli -> query("DELETE FROM `tools` WHERE tid='".$id."'");
+	// delete tool with tool id from link
+	$mysqli -> query("DELETE FROM `tools` WHERE tid='".$_GET['id']."'");
 
 
+	// check if tool had a img
+	$check = file_exists("assets/".$_GET['id'].".png");
 
-
-
-	$check = file_exists("assets/".$id.".png");
-
+	// if the file exists delete file
 	if ($check==true) {
 
-		
-
-	unlink("assets/".$id.".png");
+	unlink("assets/".$_GET['id'].".png");
 
 	}
-
-	$mysqli -> query("INSERT INTO `history`(`uid`, `element`, `changetime`, `changed`) VALUES ('".$_SESSION['uid']."','".$id."','".$time."','".$name." tool gelöscht')");
+	// enty in history that tool was deleted then redirect to dashboard
+	$mysqli -> query("INSERT INTO `history`(`uid`, `element`, `changetime`, `changed`) VALUES ('".$_SESSION['uid']."','".$_GET['id']."','".$time."','".$_GET['name']." tool gelöscht')");
 
 	header("location: index.php");
 }
-
+// if the user presses abbrechen redirect to Dashboard
 elseif (isset($_POST['abbrechen'])) {
 
 	header( "Location: index.php" );

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 <?php
+// give history access to the sql config file
 include "config.php";
 
+// create new mysqli object
 $mysqli = new mysqli($host, $user, $dbpw, $db);
 
+// start the browser sesson
 session_start();
 
-
+// check if user is logged in
 if (!isset($_SESSION['authentication'])) {
 
 	header("location: index.php");
 
 }
-
+// cheock if authentication is valid
 elseif ($_SESSION['authentication'] !== "true") 
 
 {
@@ -23,7 +26,7 @@ elseif ($_SESSION['authentication'] !== "true")
 }
 
 
-
+// doulbe ckeck that a user is loged in correctly
 if (!isset($_SESSION['uid'])) {
 
 	header("location: login.php");
@@ -83,12 +86,12 @@ if (!isset($_SESSION['uid'])) {
 
 		<div class="history">
 		<div class='htitle'>
-			<div class="element">
+			<div class="date">
 				<b>Zeitpunkt</b>
 			</div>
 
-			<div class="element">
-			<b>ID des Veränderten Elementes</b>
+			<div class="number">
+			<b>unveränderbare ID</b>
 			</div>
 
 			<div class="element">
@@ -97,19 +100,20 @@ if (!isset($_SESSION['uid'])) {
 		</div>
 
 				<?php
+				// get all history entrys for logged in user
+				$result = $mysqli -> query("SELECT * FROM `history` WHERE uid=".$_SESSION['uid']." ORDER BY hid DESC ");
 
-				$result = $mysqli -> query("SELECT * FROM `history` ORDER BY hid DESC");
-
+				// display row for every entry
 				while ($row = $result->fetch_assoc()) 
 				{
 					echo"
 					<div class='row'>
 
-					<div class='element'>
+					<div class='date'>
 					".$row['changetime']."
 					</div>
 
-					<div class='element'>
+					<div class='number'>
 					".$row['element']."
 					</div>
 

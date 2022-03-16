@@ -2,16 +2,22 @@
 
 <html>
 <?php
+// give history access to the sql config file
+include "config.php";
 
+// create new mysqli object
+$mysqli = new mysqli($host, $user, $dbpw, $db);
+
+// start the browser sesson
 session_start();
 
-
+// check if user is logged in
 if (!isset($_SESSION['authentication'])) {
 
 	header("location: index.php");
 
 }
-
+// cheock if authentication is valid
 elseif ($_SESSION['authentication'] !== "true") 
 
 {
@@ -21,7 +27,7 @@ elseif ($_SESSION['authentication'] !== "true")
 }
 
 
-
+// doulbe ckeck that a user is loged in correctly
 if (!isset($_SESSION['uid'])) {
 
 	header("location: login.php");
@@ -29,7 +35,6 @@ if (!isset($_SESSION['uid'])) {
 }
 
 ?>
-
 <head>
 
 	<link rel="stylesheet" type="text/css" href="index.css">
@@ -102,56 +107,50 @@ if (!isset($_SESSION['uid'])) {
 
 						<?php
 
-						include "config.php";
-
-
-
-						$mysqli = new mysqli($host, $user, $dbpw, $db);
-
-
-
+						// connect to DB
 						if ($mysqli -> connect_errno)
-
 						{
-
+							// error if connection fails
 							echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
 
 							exit();
 
 						}
 
-
-
-
-
+						// get all data from tool with uid from the logged in user
 						$result = $mysqli -> query("SELECT * FROM tools WHERE uid='".$_SESSION['uid']."'");
 
+						// declare counter outside of loop
 						$i=0;
 
+						// for every tool with the uid from logged in user
 						while ($row = $result->fetch_assoc()) {
 
 
-
-							if ($i==6) 
+							// if counter is equal to 4 end row and start new one
+							if ($i==4) 
 
 							{
 
 								echo"</div><div class='row'>";
+								// reset the counter
+								$i=0;
 
 							}
 
 
-
+							// counter + 1
 							$i++;
 
+							// check if the tool has a img
 							$check = file_exists("assets/".$row['tid'].".png");
 
 
-						
+							// if the file exists
 							if($check==true)
 							{
 							
-
+							// display tool
 							echo"
 
 								<div class='tool'>
@@ -176,9 +175,9 @@ if (!isset($_SESSION['uid'])) {
 
 									<div class='buttons'>
 
-										<a class='blink' href='edit.php?pass=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/edit.png'></a>
+										<a class='blink' href='edit.php?id=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/edit.png'></a>
 
-										<a class='blink' href='del.php?pass=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/delete.png'></a>
+										<a class='blink' href='del.php?id=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/delete.png'></a>
 
 									</div>
 
@@ -190,6 +189,7 @@ if (!isset($_SESSION['uid'])) {
 
 							
 						}
+						// display tool with default img
 						else
 						{
 							echo"
@@ -216,9 +216,9 @@ if (!isset($_SESSION['uid'])) {
 
 									<div class='buttons'>
 
-										<a class='blink' href='edit.php?pass=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/edit.png'></a>
+										<a class='blink' href='edit.php?id=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/edit.png'></a>
 
-										<a class='blink' href='del.php?pass=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/delete.png'></a>
+										<a class='blink' href='del.php?id=".$row["tid"]."&name=".$row["name"]."&link=".$row["link"]."'><img class='buttonimg' src='assets/delete.png'></a>
 
 									</div>
 
@@ -232,7 +232,7 @@ if (!isset($_SESSION['uid'])) {
 
 						}	
 
-
+						
 
 
 
