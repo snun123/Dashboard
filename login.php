@@ -31,15 +31,16 @@
 
 			<div class="fwrap">
 				<form class="f" method="POST">
-					<label for="email" class="label">Email:</label>
-					<input type="email" name="email" class="input">
+					<label for="email" class="label">Email:*</label>
+					<input type="email" name="email" class="input" required>
 					<br>
-					<label for="pw" class="label">Passwort:</label>
-					<input type="password" name="pw" class="input">
+					<label for="pw" class="label">Passwort:*</label>
+					<input type="password" name="pw" class="input" required>
 					<br>
 					<input type="submit" name="login" class="senden" value="login">
 					<br>
-					<input type="submit" name="reg" class="senden" value="Regristrieren">
+					<br>
+					<a href="reg.php" class="abbrechen">Noch nicht regristriert?</a>
 				</form>
 
 				<?php

@@ -94,10 +94,11 @@ html, body
 
 .senden
 {
-	font-size: 60%;
-	width: 45%;
-	height: 10%;
-	margin-top: 3%;
+	cursor: pointer;
+	font-size: 1vw;
+	width: 40%;
+	height: 2vw;
+	margin-top: 1%;
 	background-color: #e8f9fb;
 	border-radius: 5%;
 	text-align: center;
@@ -107,12 +108,39 @@ html, body
 
 .senden:hover
 {
-	font-size: 60%;
+	font-size: 1vw;
 	width: 50%;
-	height: 10%;
+	height: 2vw;
 	background-color: #ffffd1;
 	text-align: center;
 }
+
+.abbrechen
+{
+	cursor: pointer;
+	font-size: 1vw;
+	color: black;
+	padding: 0.5vw;
+	width: 45%;
+	height: 2vw;
+	margin-top: 1%;
+	background-color: #e8f9fb;
+	border-radius: 5%;
+	text-align: center;
+	border-style: none;
+	border: 0.5px solid black;
+
+}
+
+.abbrechen:hover
+{
+	font-size: 1vw;
+	width: 50%;
+	height: 2vw;
+	background-color: #ffffd1;
+	text-align: center;
+}
+
 
 .f
 {

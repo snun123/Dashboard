@@ -63,10 +63,10 @@ $time = date("y.m.d H.i.s");
 		<div class="createwindow">
 			<div class="fwrap">
 				<form class="f" method="POST" enctype="multipart/form-data">
-					<label for="name" class="label">Name:</label>
+					<label for="name" class="label">Name:*</label>
 					<input type="text" name="name" class="input" required>
 					<br>
-					<label for="text" class="label">Link:</label>
+					<label for="text" class="label">Link:*</label>
 					<input type="text" name="link" class="input" required>
 					<br>
 					<div class="label">Bild:</div>
@@ -110,7 +110,7 @@ $time = date("y.m.d H.i.s");
 						}
 
 
-					// declare what string to seach in link
+					// declare what string to seach in link 
 						$word = "https://";
 						$mystring = $_POST['link'];
 

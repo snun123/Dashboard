@@ -29,18 +29,19 @@
 
 			<div class="fwrap">
 				<form class="f" method="POST">
-					<div class="elabel">Email:</div>
+					<div class="elabel">Email:*</div>
 					<input type="Email" name="email" class="email">
 					<br>
-					<div class="pwlabel">Passwort:</div>
+					<div class="pwlabel">Passwort:*</div>
 					<input type="password" name="pw" class="pw">
 					<br>
-					<div class="pwlabel">Passwort wiederholen:</div>
+					<div class="pwlabel">Passwort wiederholen*:</div>
 					<input type="password" name="pw1" class="pw">
 					<br>
 					<input type="submit" name="senden" class="senden" value="senden">
 					<br>
-					<input type="submit" name="login" class="senden" value="Noch nicht Regristriert?">
+					<br>
+					<a href="login.php" class="abbrechen">Bereits regristriert?</a>
 				</form>
 
 

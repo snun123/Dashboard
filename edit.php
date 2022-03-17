@@ -97,6 +97,25 @@
                     if(isset($_POST['senden']))
 
                     {
+					if(strlen($_POST['name'])>100)
+					{
+						// error if length is more then 100 caracters
+						echo"<div class='error'>
+
+						Der Name ist zu lange maximal 100 Zeichen
+						</div>";
+					}
+					// check if link is more then 100 caracters
+					elseif (strlen($_POST['link'])>100) {
+						// error if length is more then 100 caracters
+						echo"<div class='error'>
+
+						Der Link ist zu lange maximal 100 Zeichen
+						</div>";
+					}
+					// if link and name is under 100 caracters
+					else{
+
                         // connect to DB
                         if ($mysqli -> connect_errno)
                         {
@@ -201,7 +220,7 @@
         // entry in history that tool was changed
                         $mysqli -> query("INSERT INTO `history`(`uid`, `element`, `changetime`, `changed`) VALUES ('".$_SESSION['uid']."','".$row['tid']."','".$time."','".$row['name']." tool bearbeitet')");
                             header("location: index.php");
-
+                        }
                         }
 
     // if user presse abbrechen redirect to dashboard
