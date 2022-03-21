@@ -8,15 +8,12 @@ html, body
 	margin-left: auto;
 	font-family: sans-serif;
 }
-
 .head
 {
 	height: 5vw;
 	background-color: #e8f9fb;
 	width: 100%;
-	
 }
-
 .logo
 {
 	margin-top: 0.35%;
@@ -27,7 +24,6 @@ html, body
 	height: 85%;
 	text-align: left;
 }
-
 .title
 {
 	margin-top: 0.35%;
@@ -40,134 +36,70 @@ html, body
 	font-size: 2.5vw;
 	line-height: 225%;
 }
-
-
 .alpeinlogo
 {
 	width: 60%;
 	height: 100%;
 	max-height: 5vw;
 }
-
 .container
-
 {
-
 	width: 100%;
-
 	height: 100%;
-
 }
-
 .sidenav
-
 {
-
 	background-color:  #e8f9fb;
-
 	height: 95vh;
-
 	float: left;
-
 	width: 15%;
-
 }
-
 .history
-
-{	
-
+{
 	margin-top: 0.5vw;
-	
 	height: 85%;
-
 	float: right;
-
 	width: 84.4%;
-
 	overflow-y: scroll;
-
 	text-align: center;
-
-
 }
-
 .navlink:link
-
 {
-
  color: white;
-
  margin: auto;
-
  font-size: 1.8vw;
-
  text-align: left;
-
  text-decoration: none;
-
  position: absolute;
-
 }
-
-
-
 .navlink:hover
-
 {
-
  margin: auto;
-
  font-size: 2vw;
-
  text-align: left;
-
  text-decoration: none;
-
 }
-
-
-
 .navlink:visited
-
 {
-
  color: white;
-
  margin: auto;
-
  font-size: 1.8vw;
-
  text-align: left;
-
  text-decoration: none;
-
 }
-
-
-
 .navlinkwrap
-
 {
-
 	background-color: lightblue;
-
 	margin-right: auto;
-
 	height: 2.5vw;
-
 	margin-top: 2.5%;
-
 }
-
 .htitle
 {
 	height: 1.5vw;
 	margin-bottom: 0.5vw;
 	width: 100%;
-
 }
-
 .row
 {
 	height: 1.3vw;
@@ -175,20 +107,15 @@ html, body
 	margin-bottom: 0.5vw;
 	width: 100%;
 }
-
-
 .element
 {
-
 	font-size: 1vw;
 	width: 69%;
 	float: left;
 	padding: auto;
 	border: 1px solid black;
 	overflow-x: hidden;
-
 }
-
 .number
 {
 	font-size: 1vw;
@@ -197,7 +124,6 @@ html, body
 	padding: auto;
 	border: 1px solid black;
 }
-
 .date
 {
 	font-size: 1vw;
@@ -205,9 +131,4 @@ html, body
 	float: left;
 	padding: auto;
 	border: 1px solid black;
-
 }
-
-
-
-
