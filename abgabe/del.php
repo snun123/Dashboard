@@ -34,6 +34,11 @@
 	// get current time
 	$time = date("y.m.d H.i.s");
 
+	if ($mysqli -> connect_errno) {
+		echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+		exit();
+						}
+
 ?>
 
 <head>

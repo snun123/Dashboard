@@ -168,8 +168,8 @@
 								// if uplad fails display error 
 								else 
 								{
-								echo"<div class='error'>
-								Ein error ist aufgetreten
+								echo"<div clanss='error'>
+								Ein error ist aufgetrete
 								</div>";
 								}
 
